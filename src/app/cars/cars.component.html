@@ -1,40 +1,16 @@
-<!-- 1. one-way binding-->
-<!-- Comp -> DOM - [attribute]="variable" -->
-<!-- связь с атрибутом -->
-<!-- ng следит за изменением указанных в [] -->
-
-<!--<button [disabled]="!canAddCar" class="btn btn-primary">Добавить машину</button>-->
-<!--<hr>-->
-
-<!--<app-car></app-car>-->
-<!--<app-car></app-car>-->
-
-<!-- 2. one-way binding-->
-<!-- DOM -> Comp (event)="expression"-->
-<!--  -->
-<!-- ng следит за изменением указанных в [] -->
-
+<input type="text" [(ngModel)]="carName">
 <button (click)="addCar()" class="btn btn-primary">Добавить машину</button>
-<p>{{addCarStatus}}</p>
+<!--1.-->
+<!--<p *ngIf="!addCarStatus">Машина не добавлена</p>-->
+<!--<p *ngIf="addCarStatus"> Машина добавлена</p>-->
+
+<!--2.-->
+<p *ngIf="!addCarStatus; else successStatus">Машина не добавлена</p>
+<ng-template #successStatus>
+  <p>Машина добавлена</p>
+</ng-template>
 
 <hr>
 
 <app-car></app-car>
 <app-car></app-car>
-
-<hr>
-
-<!--1. способ DOM -> Comp -->
-<!--<input type="text" (input)="onKeyUp($event)" >-->
-
-<!--2. способ DOM -> Comp -->
-<!-- использование референции #-->
-<!--<input type="text" #myInput (input)="onKeyUp(myInput.value)" >-->
-<input type="text" (keyup.enter)="onKeyUp($event)" >
-
-<p>{{ inputText }}</p>
-
-<!--3.-->
-<!--two-way binding-->
-<!-- [(ngModel)] = "variable" -->
-<input type="text" [(ngModel)]="inputText">
