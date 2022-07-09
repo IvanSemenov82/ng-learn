@@ -1,0 +1,8 @@
+<input type="text" placeholder="number of ..." [(ngModel)]="drawNumber">
+<button (click)="Draw()">Push</button>
+<div>
+
+  <svg *ngFor="let item of arr">
+    <circle [attr.cx]="item" [attr.cy]="item" r="50" fill="none" stroke="black" stroke-width="1" />
+  </svg>
+</div>
