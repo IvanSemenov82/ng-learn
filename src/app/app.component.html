@@ -5,8 +5,18 @@
 
   <hr />
 
-  <app-post></app-post>
-  <app-post></app-post>
+  <app-post
+    *ngFor="let p of posts"
+    [post]="p"
+  >
+  </app-post>
+
+  <hr />
+
+  <app-my
+    *ngFor="let s of skills"
+    [skill]="s"
+  ></app-my>
 
 </div>
 
