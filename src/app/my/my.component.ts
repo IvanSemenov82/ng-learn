@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Skill} from "../app.component";
 
 @Component({
@@ -6,15 +6,10 @@ import {Skill} from "../app.component";
   templateUrl: './my.component.html',
   styleUrls: ['./my.component.css']
 })
-export class MyComponent implements OnInit {
+export class MyComponent {
 
   @Input() skill!: Skill
 
   other:string = 'other'
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -11,6 +11,10 @@
     *ngFor="let p of posts"
     [post]="p"
   >
+    <small *ngIf="p.text.length > 10; else short">Пост длинный</small>
+    <ng-template #short>
+      <small>Пост короткий</small>
+    </ng-template>
   </app-post>
 
   <hr />
@@ -22,7 +26,12 @@
   <app-my
     *ngFor="let s of skills"
     [skill]="s"
-  ></app-my>
+  >
+    <small *ngIf="s.text.length > 10; else short">Пост длинный</small>
+    <ng-template #short>
+      <small>Пост короткий</small>
+    </ng-template>
+  </app-my>
 
 </div>
 
