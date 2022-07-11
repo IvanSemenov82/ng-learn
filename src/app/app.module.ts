@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {PostFormComponent} from './post-form/post-form.component';
 import {PostComponent} from './post/post.component';
 import { MyComponent } from './my/my.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MyComponent } from './my/my.component';
     PostFormComponent,
     PostComponent,
     MyComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,

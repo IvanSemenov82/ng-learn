@@ -23,12 +23,12 @@ export class AppComponent {
   posts: Post[] = [
     {
       title: 'Первый пост',
-      text: 'Какойто тeкст',
+      text: 'Какой-то тeкст',
       id: 1,
     },
     {
       title: 'Второй пост',
-      text: 'Ещё какойто текст',
+      text: 'Ещё какой-то текст',
       id: 2,
     }
   ];
@@ -45,4 +45,14 @@ export class AppComponent {
       id: 1,
     },
   ]
+
+  updatePosts(post:Post) {
+    this.posts.unshift(post)
+    console.log(post)
+  }
+
+  updateSkills(skills:Skill) {
+    this.skills.unshift(skills)
+    console.log(skills)
+  }
 }
