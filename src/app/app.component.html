@@ -27,10 +27,12 @@
     *ngFor="let s of skills"
     [skill]="s"
   >
-    <small *ngIf="s.text.length > 10; else short">Пост длинный</small>
-    <ng-template #short>
-      <small>Пост короткий</small>
-    </ng-template>
+    <div #info>
+      <small *ngIf="s.text.length > 10; else short">Пост длинный</small>
+      <ng-template #short>
+        <small>Пост короткий</small>
+      </ng-template>
+    </div>
   </app-my>
 
 </div>
