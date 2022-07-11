@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output, OnInit} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 import {Skill} from "../app.component";
 
 @Component({
@@ -7,15 +7,14 @@ import {Skill} from "../app.component";
   styleUrls: ['./skills.component.css']
 })
 
-export class SkillsComponent implements OnInit {
+export class SkillsComponent {
 
   @Output() addSkill: EventEmitter<Skill> = new EventEmitter<Skill>()
 
+  @ViewChild('titleInput', {static:false}) inputRef!: ElementRef
+
   skillTitle: string = "";
   skillText: string = "";
-
-  ngOnInit() {
-  }
 
   onAdd() {
     if (this.skillTitle.trim() && this.skillText.trim()) {
@@ -26,5 +25,9 @@ export class SkillsComponent implements OnInit {
       this.addSkill.emit(skill)
       this.skillTitle = this.skillText = ''
     }
+  }
+
+  focusTitle() {
+    this.inputRef.nativeElement.focus();
   }
 }
